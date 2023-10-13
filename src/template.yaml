@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AI Utilities SAM Application by Jason Keys
+  
+Globals:
+  Function:
+    Timeout: 1
+
+Resources:
+  OpenAiChatFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: openai-chat
+      Handler: index.handler
+      Runtime: nodejs18.x
+      Description: Function that uses OpenAI's Chat Completion API (ChatGPT) to facilitate a chat given prompt inputs
+      Architectures:
+        - arm64
+      Timeout: 60
+      MemorySize: 1024
+      Environment:
+        Variables:
+          OPENAI_API_KEY: '{{resolve:secretsmanager:ai-utilities/openai/api-key:SecretString:openai-api-key}}'
+      DeadLetterQueue:
+        Type: SQS
+        QueueLogicalName: OpenAiChatFunctionDLQ
+        TargetArn: !GetAtt OpenAiChatFunctionDLQ.Arn
+
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource:
+                - arn:aws:secretsmanager:us-west-2:123456789098:secret:ai-utilities/openai/api-key-xxxxxx
+
+Outputs:
+  OpenAiChatFunction:
+    Description: "Open AI Chat Function ARN"
+    Value: !GetAtt OpenAiChatFunction.Arn

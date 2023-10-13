@@ -1,0 +1,22 @@
+{
+  "name": "openai-chat",
+  "version": "1.0.0",
+  "description": "Uses the OpenAI Chat Completions API to facilitate a discussidon between inputs and chat responses.",
+  "main": "app.js",
+  "repository": "https://github.com/jasonkeys/ai-utilities",
+  "author": "Jason Keys",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1473.0",
+    "axios": "^1.5.1",
+    "openai": "^3.3.0",
+    "string-strip-html": "^13.4.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0"
+  }
+}

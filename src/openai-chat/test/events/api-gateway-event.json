@@ -1,0 +1,58 @@
+{
+  "body": "{\"prompt\":\"\",\"max_tokens\":500}",
+  "resource": "/openai",
+  "path": "/openai",
+  "httpMethod": "POST",
+  "isBase64Encoded": false,
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/json",
+    "Host": "your-api-id.execute-api.us-east-1.amazonaws.com",
+    "User-Agent": "PostmanRuntime/7.28.0",
+    "X-Amzn-Trace-Id": "Root=1-12345678-1234567890abcdef123456789",
+    "X-Forwarded-For": "1.2.3.4",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": ["*/*"],
+    "Accept-Encoding": ["gzip, deflate, br"],
+    "Content-Type": ["application/json"],
+    "Host": ["your-api-id.execute-api.us-east-1.amazonaws.com"],
+    "User-Agent": ["PostmanRuntime/7.28.0"],
+    "X-Amzn-Trace-Id": ["Root=1-12345678-1234567890abcdef123456789"],
+    "X-Forwarded-For": ["1.2.3.4"],
+    "X-Forwarded-Port": ["443"],
+    "X-Forwarded-Proto": ["https"]
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "resourceId": "123456",
+    "stage": "Prod",
+    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "requestTime": "09/Apr/2015:12:34:56 +0000",
+    "requestTimeEpoch": 1428582896000,
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "accessKey": null,
+      "sourceIp": "1.2.3.4",
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "PostmanRuntime/7.28.0",
+      "user": null
+    },
+    "path": "/openai",
+    "resourcePath": "/openai",
+    "httpMethod": "POST",
+    "apiId": "your-api-id"
+  }
+}
